@@ -9,6 +9,9 @@ function randomIntFromInterval(min, max) {
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+// Choix du nombre random entre 1 et 100
+const ramdom = randomIntFromInterval(1, 100);
+
 // Function core du jeu permettant de définir si l'utilisateur à bien répondu
 function askPrompt() {
 	// Demande à l'utilisateur de choisir un nombre
@@ -17,7 +20,7 @@ function askPrompt() {
 
 		if (chiffre === ramdom) {
 			// L'utilisateur à bien répondu
-			console.log('Bravoooooo mon nombre', ramdom);
+			console.log('Bravoooooo mon nombre était: ', ramdom);
 			// Nous demandons a Node de fermer le programme
 			process.exit();
 		} else if (chiffre < ramdom) {
@@ -31,9 +34,6 @@ function askPrompt() {
 		}
 	});
 }
-
-// Choix du nombre random entre 1 et 100
-const ramdom = randomIntFromInterval(1, 100);
 
 // Instanciation du listener
 const eventListener = new EventEmitter();
